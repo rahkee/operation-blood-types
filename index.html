@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Operation Blood Type Scenarios</title>
+
+        <link rel="stylesheet" href="https://use.typekit.net/svg2gmn.css" />
+        <link rel="stylesheet" href="normalize.css" />
+        <link rel="stylesheet" href="operation-blood-type-scenarios.css" />
+    </head>
+
+    <body>
+        <main>
+            <article id="introScreen" class="">
+                <img src="assets/intro-screen-bg.svg" alt="" />
+
+                <div class="text-container">
+                    <h1>Operation:</h1>
+                    <h2>Blood Typing</h2>
+                </div>
+
+                <div class="btn-container">
+                    <button id="btnStartGame" class="cta intro">Start</button>
+                </div>
+            </article>
+
+            <article id="gameScreen" class="hide">
+                <div id="scenarioWindow">
+                    <section class="nurse-character-container">
+                        <img src="" alt="nurse character" />
+                    </section>
+
+                    <!-- Patient #1 -->
+                    <section
+                        class="patient-character-container ballerina"
+                        data-patient-name="ballerina"
+                        data-blood-type-required="B"
+                        data-blood-quantity-required="2"
+                    >
+                        <img
+                            src="assets/game-character-patient-ballerina.svg"
+                            alt=""
+                        />
+                    </section>
+
+                    <!-- Patient #2 -->
+                    <section
+                        class="patient-character-container clown"
+                        data-patient-name="clown"
+                        data-blood-type-required="A"
+                        data-blood-quantity-required="1"
+                    >
+                        <img
+                            src="assets/game-character-patient-clown.svg"
+                            alt=""
+                        />
+                    </section>
+
+                    <!-- Patient #3 -->
+                    <section
+                        class="patient-character-container cowboy"
+                        data-patient-name="cowboy"
+                        data-blood-type-required="AB"
+                        data-blood-quantity-required="1"
+                    >
+                        <img
+                            src="assets/game-character-patient-cowboy.svg"
+                            alt=""
+                        />
+                    </section>
+
+                    <!-- Patient #4 -->
+                    <section
+                        class="patient-character-container elf"
+                        data-patient-name="elf"
+                        data-blood-type-required="B"
+                        data-blood-quantity-required="1"
+                    >
+                        <img
+                            src="assets/game-character-patient-elf.svg"
+                            alt=""
+                        />
+                    </section>
+
+                    <!-- Patient #5 -->
+                    <section
+                        class="patient-character-container heels"
+                        data-patient-name="heels"
+                        data-blood-type-required="A"
+                        data-blood-quantity-required="1"
+                    >
+                        <img
+                            src="assets/game-character-patient-heels.svg"
+                            alt=""
+                        />
+                    </section>
+
+                    <!-- Patient #6 -->
+                    <section
+                        class="patient-character-container hockey-player"
+                        data-patient-name="hockey-player"
+                        data-blood-type-required="AB"
+                        data-blood-quantity-required="1"
+                    >
+                        <img
+                            src="assets/game-character-patient-hockey-player.svg"
+                            alt=""
+                        />
+                    </section>
+
+                    <!-- Patient #7 -->
+                    <section
+                        class="patient-character-container hulk"
+                        data-patient-name="hulk"
+                        data-blood-type-required="O"
+                        data-blood-quantity-required="1"
+                    >
+                        <img
+                            src="assets/game-character-patient-hulk.svg"
+                            alt=""
+                        />
+                    </section>
+
+                    <!-- Patient #8 -->
+                    <section
+                        class="patient-character-container mom"
+                        data-patient-name="mom"
+                        data-blood-type-required="AB"
+                        data-blood-quantity-required="1"
+                    >
+                        <img
+                            src="assets/game-character-patient-mom.svg"
+                            alt=""
+                        />
+                    </section>
+
+                    <!-- Patient #9 -->
+                    <section
+                        class="patient-character-container red-boots"
+                        data-patient-name="red-boots"
+                        data-blood-type-required="B"
+                        data-blood-quantity-required="1"
+                    >
+                        <img
+                            src="assets/game-character-patient-red-boots.svg"
+                            alt=""
+                        />
+                    </section>
+
+                    <!-- Patient #10 -->
+                    <section
+                        class="patient-character-container space-man"
+                        data-patient-name="space-man"
+                        data-blood-type-required="O"
+                        data-blood-quantity-required="1"
+                    >
+                        <img
+                            src="assets/game-character-patient-space-man.svg"
+                            alt=""
+                        />
+                    </section>
+                    <!-- END Patients-->
+
+                    <div class="blood-bag-drop-zone-container unloaded">
+                        <img
+                            class="drop-zone-hangar empty"
+                            src="assets/game-element-blood-bag-hanger.svg"
+                            alt=""
+                        />
+
+                        <img
+                            class="drop-zone-hangar full"
+                            src="assets/game-element-blood-bag-hanger-correct.svg"
+                            alt=""
+                        />
+                        <label data-blood-type-on-hangar>B</label>
+                        <p class="counter">
+                            x<span data-blood-qty-on-hangar>0</span>
+                        </p>
+                    </div>
+
+                    <section class="nurse-dialog-container">
+                        <div class="dialog-box">
+                            <p></p>
+                        </div>
+
+                        <button
+                            class="cta game-scenario"
+                            data-next-action=""
+                        ></button>
+                    </section>
+                </div>
+
+                <hr />
+
+                <div id="gameControlsWindow">
+                    <div class="game-counters-container">
+                        <div class="counter-container">
+                            <div class="counter-icon">
+                                <img
+                                    src="assets/game-icon-patients.svg"
+                                    alt=""
+                                />
+                                <p>Patients</p>
+                            </div>
+                            <div class="counter-number" data-patient-counter>
+                                <p>0</p>
+                            </div>
+                        </div>
+
+                        <div class="counter-container">
+                            <div class="counter-icon">
+                                <img src="assets/game-icon-saved.svg" alt="" />
+                                <p>Saves</p>
+                            </div>
+                            <div class="counter-number" data-saved-counter>
+                                <p>0</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blood-bag-container">
+                        <div
+                            class="blood-bag"
+                            data-blood-bag-type="A"
+                            draggable="true"
+                        >
+                            <img
+                                src="assets/game-element-blood-bag.svg"
+                                alt=""
+                            />
+                            <label>A</label>
+                            <p class="counter">x<span>0</span></p>
+                        </div>
+                        <div
+                            class="blood-bag"
+                            data-blood-bag-type="B"
+                            draggable="true"
+                        >
+                            <img
+                                src="assets/game-element-blood-bag.svg"
+                                alt=""
+                            />
+                            <label>B</label>
+                            <p class="counter">x<span>0</span></p>
+                        </div>
+                        <div
+                            class="blood-bag"
+                            data-blood-bag-type="AB"
+                            draggable="true"
+                        >
+                            <img
+                                src="assets/game-element-blood-bag.svg"
+                                alt=""
+                            />
+                            <label>AB</label>
+                            <p class="counter">x<span>0</span></p>
+                        </div>
+                        <div
+                            class="blood-bag"
+                            data-blood-bag-type="O"
+                            draggable="true"
+                        >
+                            <img
+                                src="assets/game-element-blood-bag.svg"
+                                alt=""
+                            />
+                            <label>O</label>
+                            <p class="counter">x<span>0</span></p>
+                        </div>
+                    </div>
+
+                    <div class="game-helpers-container">
+                        <button
+                            title="Help Button, click to learn how to play this game."
+                            data-purpose="help"
+                        >
+                            <img
+                                src="assets/game-helper-help.svg"
+                                alt="Help button icon"
+                            />
+                        </button>
+
+                        <button
+                            title="Reset button, click if you get stuck and would like to start over."
+                            data-purpose="reset"
+                        >
+                            <img
+                                src="assets/game-helper-reset.svg"
+                                alt="Reset button icon"
+                            />
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <script
+            src="https://code.jquery.com/jquery-3.4.0.min.js"
+            integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+            crossorigin="anonymous"
+        ></script>
+        <script src="operation-blood-type.js"></script>
+        <script
+            type="text/javascript"
+            src="https://courseplayer.avalearning.com/nweb/js/base.js"
+        ></script>
+    </body>
+</html>

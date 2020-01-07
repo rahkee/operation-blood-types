@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 611.6 306.6" style="enable-background:new 0 0 611.6 306.6;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#EAEAEA;stroke:#B7B7B7;stroke-width:1.6042;stroke-miterlimit:10;}
+	.st1{fill:#D6D6D6;}
+	.st2{fill:#D7E2EA;stroke:#B7B7B7;stroke-width:1.883;stroke-miterlimit:10;}
+	.st3{opacity:0.81;fill:#FFFFFF;enable-background:new    ;}
+	.st4{fill:#999999;}
+	.st5{fill:#D6D6D6;stroke:#B7B7B7;stroke-width:1.682;stroke-miterlimit:10;}
+	.st6{fill:#FFFFFF;stroke:#D6D6D6;stroke-width:1.6189;stroke-miterlimit:10;}
+	.st7{fill:none;stroke:#82D880;stroke-width:1.6189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<g id="Door_2_">
+	<rect x="45.5" y="41.6" class="st0" width="165.1" height="267.3"/>
+	<rect x="53.2" y="49.2" class="st1" width="150.6" height="258.8"/>
+	<rect x="75.6" y="67.1" class="st2" width="108" height="114.5"/>
+	<polygon class="st3" points="101.5,180.2 76.7,180.4 76.7,146.6 115.1,68.9 156.2,71 	"/>
+	<circle class="st4" cx="187.5" cy="199.9" r="7.2"/>
+</g>
+<g id="EKG_Machine_2_">
+	<rect x="302.6" y="183.9" class="st5" width="165" height="125"/>
+	<path class="st6" d="M438.3,174.9H329.9c-3.9,0-7-3.1-7-7V99c0-3.8,3.1-7,7-7h108.4c3.9,0,7,3.2,7,7v68.9
+		C445.3,171.8,442.2,174.9,438.3,174.9z"/>
+	<path class="st4" d="M330.7,163.1v-59.3c0-2.2,1.8-4,4-4h78.7c2.2,0,4,1.8,4,4v59.3c0,2.2-1.8,4-4,4h-78.7
+		C332.5,167.1,330.7,165.3,330.7,163.1z"/>
+	<polyline class="st7" points="330.6,131.7 341.6,131.7 344.6,122.1 346.8,146.2 350.4,128.7 352.5,136.5 359.1,136.5 362.2,115.9 
+		365.7,157.2 371,124.7 374,143.1 378,131.7 393.3,132.2 396.8,123.8 399,141.4 402.5,126.9 403.9,132.6 416.6,133 	"/>
+	<circle class="st5" cx="431.1" cy="108.8" r="6.7"/>
+	<path class="st5" d="M436.5,129.1h-8c-1.8,0-3.2-1.5-3.2-3.2v-0.4c0-1.8,1.5-3.2,3.2-3.2h8c1.8,0,3.2,1.5,3.2,3.2v0.4
+		C439.7,127.6,438.3,129.1,436.5,129.1z"/>
+	<path class="st5" d="M436.5,141h-8c-1.8,0-3.2-1.5-3.2-3.2v-0.4c0-1.8,1.5-3.2,3.2-3.2h8c1.8,0,3.2,1.5,3.2,3.2v0.4
+		C439.7,139.5,438.3,141,436.5,141z"/>
+	<path class="st5" d="M436.5,152.9h-8c-1.8,0-3.2-1.5-3.2-3.2v-0.4c0-1.8,1.5-3.2,3.2-3.2h8c1.8,0,3.2,1.5,3.2,3.2v0.4
+		C439.7,151.4,438.3,152.9,436.5,152.9z"/>
+	<path class="st5" d="M436.5,164.8h-8c-1.8,0-3.2-1.5-3.2-3.2v-0.4c0-1.8,1.5-3.2,3.2-3.2h8c1.8,0,3.2,1.5,3.2,3.2v0.4
+		C439.7,163.3,438.3,164.8,436.5,164.8z"/>
+	<rect x="352.4" y="174.9" class="st5" width="64.7" height="8.2"/>
+</g>
+</svg>

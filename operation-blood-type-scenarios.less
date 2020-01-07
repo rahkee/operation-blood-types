@@ -1,0 +1,464 @@
+.heading-font(@weight: bold) {
+    color: @dark-gray;
+    font-family: josefin-sans, sans-serif;
+    font-weight: @weight;
+}
+
+.reading-font(@weight: normal) {
+    color: @dark-gray;
+    font-family: josefin-sans, sans-serif;
+    font-weight: @weight;
+}
+
+@white: #fff;
+@light-gray: #e5e5e5;
+@gray: #b7b7b7;
+@dark-gray: #545454;
+
+html {
+    font-size: ~'calc(62.5% + .25vw)';
+}
+
+body {
+    background-color: @light-gray;
+}
+
+main {
+    display: grid;
+
+    > article {
+        grid-column: ~'1 / 2';
+        grid-row: ~'1 / 2';
+    }
+}
+
+h1,
+h2 {
+    .heading-font();
+}
+
+p {
+    .reading-font();
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+    transition-property: opacity, transform;
+
+    &.cta {
+        background-color: #f1cc2d;
+        border-color: @dark-gray;
+        border-style: solid;
+        .reading-font(bold);
+
+        &.intro {
+            border-radius: 48px;
+            border-width: 3px;
+            font-size: 3.6rem;
+            padding: 4px 48px 12px;
+            text-transform: uppercase;
+        }
+
+        @-moz-document url-prefix() {
+            &.intro {
+                padding: 12px 48px 2px;
+            }
+        }
+
+        &.game-scenario {
+            border-radius: 10px;
+            border-width: 2px;
+            float: right;
+            font-size: 1.6rem;
+            padding: 10px 20px 14px;
+            transform: translate(-25px, 22.5px);
+
+            &:hover {
+                transform: scale(1.1) translate(-25px, 20px);
+            }
+        }
+
+        @-moz-document url-prefix() {
+            &.game-scenario {
+                padding: 14px 20px 10px;
+            }
+        }
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    > * {
+        cursor: pointer;
+    }
+}
+
+.hide {
+    display: none !important;
+}
+
+.show-patient {
+    img {
+        transform: translateX(9%) !important;
+    }
+}
+
+.disable {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#introScreen {
+    display: grid;
+    grid-template-columns: 2fr 6fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr 1fr 1fr;
+
+    img {
+        align-self: end;
+        grid-column: ~'1 / 4';
+        grid-row: ~'1 / 6';
+    }
+
+    .text-container {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        grid-column: ~'2 / 3';
+        grid-row: ~'2 / 3';
+
+        h1,
+        h2 {
+            margin: 0;
+            text-align: right;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            background-color: @dark-gray;
+            color: @white;
+            font-size: 3.8rem;
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+            padding: 10px 20px 20px;
+        }
+
+        @-moz-document url-prefix() {
+            h1 {
+                padding: 20px 20px 10px;
+            }
+        }
+
+        h2 {
+            font-size: 5rem;
+            .heading-font(normal);
+        }
+    }
+
+    .btn-container {
+        align-self: center;
+        grid-column: ~'1 /4';
+        grid-row: ~'4 / 5';
+        text-align: center;
+    }
+}
+
+#gameScreen {
+    background-color: @light-gray;
+
+    #scenarioWindow {
+        display: grid;
+        background: url('assets/game-screen-bg.svg') no-repeat 25% bottom;
+        grid-template-columns: repeat(12, 1fr);
+        overflow: hidden;
+
+        .nurse-character-container {
+            align-items: flex-end;
+            display: flex;
+            grid-column: ~'1 / 5';
+            grid-row: 1;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .patient-character-container {
+            align-self: end;
+            grid-column: ~'6 / -1';
+            grid-row: 1;
+
+            img {
+                display: block;
+            }
+
+            &.ballerina,
+            &.clown,
+            &.cowboy,
+            &.elf,
+            &.heels,
+            &.hockey-player,
+            &.hulk,
+            &.mom,
+            &.red-boots,
+            &.space-man {
+                overflow: hidden;
+
+                img {
+                    transition-timing-function: cubic-bezier(
+                        0.18,
+                        0.89,
+                        0.33,
+                        1.07
+                    );
+                    transition-duration: 1s;
+                    transition-property: transform;
+                    transform: translateX(100%);
+                }
+            }
+        }
+
+        .blood-bag-drop-zone-container {
+            display: grid;
+            grid-column: ~'10 / -1';
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(20, minmax(0, 10%));
+            grid-row: ~'1 / -1';
+            transform: translate(0, 0);
+
+            &.unloaded {
+                img.full,
+                label,
+                p.counter {
+                    display: none;
+                }
+            }
+
+            &.loaded {
+                img.empty {
+                    display: none;
+                }
+            }
+
+            img {
+                align-self: flex-end;
+                grid-column: ~'1 / -1';
+                grid-row: ~'1 / -1';
+                pointer-events: none;
+            }
+
+            label,
+            p.counter {
+                grid-column: ~'1 / 2';
+                pointer-events: none;
+                .reading-font(bold);
+                text-align: center;
+            }
+
+            label {
+                align-self: center;
+                font-size: 3rem;
+                grid-row: ~'6 / 9';
+                transform: translateY(5px);
+            }
+
+            p.counter {
+                color: @white;
+                font-size: 1.6rem;
+                grid-row: ~'9 / 11';
+                transform: translateY(2px);
+
+                span {
+                    margin-left: 2px;
+                }
+            }
+        }
+
+        .nurse-dialog-container {
+            grid-column: ~'4 / 10';
+            grid-row: 1;
+
+            @media screen and (max-width: 649px) {
+                grid-column: ~'3 / 11';
+            }
+
+            .dialog-box {
+                background-color: @white;
+                border: 2px @dark-gray solid;
+                border-radius: 12px;
+                padding: 20px;
+                transform: translateY(36px);
+
+                p {
+                    font-size: 1.4rem;
+                    line-height: 1.3;
+                }
+            }
+        }
+    }
+
+    hr {
+        border-top: 3px @dark-gray solid;
+        margin: 0;
+        border-bottom: 6px @gray solid;
+    }
+
+    #gameControlsWindow {
+        background-color: @dark-gray;
+        display: grid;
+        grid-gap: 25px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 'counter blood blood game-helpers';
+        padding: 15px 0;
+
+        @media screen and (max-width: 600px) {
+            grid-gap: 15px;
+            grid-template-areas:
+                'blood blood blood blood'
+                'counter counter game-helpers game-helpers';
+            padding: 15px;
+        }
+
+        .game-counters-container {
+            align-items: center;
+            border-right: 2px @gray solid;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            grid-area: counter;
+
+            @media screen and (max-width: 600px) {
+                border-right: none;
+                flex-direction: row;
+            }
+
+            .counter-container {
+                display: flex;
+                justify-content: center;
+                flex-wrap: nowrap;
+
+                p {
+                    color: @white;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+            }
+
+            .counter-icon,
+            .counter-number {
+                display: inline-block;
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            .counter-icon {
+                width: 60px;
+
+                img {
+                    height: 24px;
+                    width: 24px;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+
+            .counter-number {
+                width: 48px;
+
+                p {
+                    font-size: 2.8rem;
+                }
+            }
+        }
+
+        .blood-bag-container {
+            display: grid;
+            grid-area: blood;
+            grid-gap: 15px;
+            grid-template-columns: repeat(4, 1fr);
+            transition: opacity 0.25s ease-in-out;
+
+            .blood-bag {
+                cursor: pointer;
+                display: grid;
+                grid-template-rows: repeat(20, minmax(0, 10%));
+                justify-items: center;
+                padding: 0;
+                transition-duration: 0.25s;
+                transition-timing-function: ease-in-out;
+                transition-property: transform;
+
+                img,
+                label,
+                p {
+                    pointer-events: none;
+                }
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+
+            img {
+                grid-column: ~'1 / -1';
+                grid-row: ~'1 / -1';
+                width: 100%;
+            }
+
+            label,
+            p.counter {
+                align-items: center;
+                display: flex;
+                grid-column: ~'1 / -1';
+                .reading-font(bold);
+            }
+
+            label {
+                font-size: 2.6rem;
+                grid-row: ~'4 / 10';
+            }
+
+            p.counter {
+                color: @white;
+                font-size: 1.6rem;
+                grid-row: ~'10 / 14';
+
+                span {
+                    margin-left: 2px;
+                }
+            }
+        }
+
+        .game-helpers-container {
+            align-items: center;
+            border-left: 2px @gray solid;
+            display: flex;
+            flex-direction: column;
+            grid-area: game-helpers;
+            justify-content: center;
+
+            @media screen and (max-width: 600px) {
+                border-left: none;
+                flex-direction: row;
+            }
+
+            button {
+                margin: 4px;
+                padding: 0;
+                width: 100%;
+                max-width: 48px;
+            }
+        }
+    }
+}

@@ -1,0 +1,392 @@
+html {
+  font-size: calc(62.5% + .25vw);
+}
+body {
+  background-color: #e5e5e5;
+}
+main {
+  display: grid;
+}
+main > article {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+h1,
+h2 {
+  color: #545454;
+  font-family: josefin-sans, sans-serif;
+  font-weight: bold;
+}
+p {
+  color: #545454;
+  font-family: josefin-sans, sans-serif;
+  font-weight: normal;
+  margin: 0;
+}
+img {
+  width: 100%;
+}
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+  transition-property: opacity, transform;
+}
+button.cta {
+  background-color: #f1cc2d;
+  border-color: #545454;
+  border-style: solid;
+  color: #545454;
+  font-family: josefin-sans, sans-serif;
+  font-weight: bold;
+}
+button.cta.intro {
+  border-radius: 48px;
+  border-width: 3px;
+  font-size: 3.6rem;
+  padding: 4px 48px 12px;
+  text-transform: uppercase;
+}
+@-moz-document url-prefix() {
+  button.cta.intro {
+    padding: 12px 48px 2px;
+  }
+}
+button.cta.game-scenario {
+  border-radius: 10px;
+  border-width: 2px;
+  float: right;
+  font-size: 1.6rem;
+  padding: 10px 20px 14px;
+  transform: translate(-25px, 22.5px);
+}
+button.cta.game-scenario:hover {
+  transform: scale(1.1) translate(-25px, 20px);
+}
+@-moz-document url-prefix() {
+  button.cta.game-scenario {
+    padding: 14px 20px 10px;
+  }
+}
+button:hover {
+  transform: scale(1.05);
+}
+button > * {
+  cursor: pointer;
+}
+.hide {
+  display: none !important;
+}
+.show-patient img {
+  transform: translateX(9%) !important;
+}
+.disable {
+  opacity: 0.5;
+  pointer-events: none;
+}
+#introScreen {
+  display: grid;
+  grid-template-columns: 2fr 6fr 1fr;
+  grid-template-rows: 1fr 3fr 1fr 1fr 1fr;
+}
+#introScreen img {
+  align-self: end;
+  grid-column: 1 / 4;
+  grid-row: 1 / 6;
+}
+#introScreen .text-container {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+#introScreen .text-container h1,
+#introScreen .text-container h2 {
+  margin: 0;
+  text-align: right;
+  text-transform: uppercase;
+}
+#introScreen .text-container h1 {
+  background-color: #545454;
+  color: #fff;
+  font-size: 3.8rem;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+  padding: 10px 20px 20px;
+}
+@-moz-document url-prefix() {
+  #introScreen .text-container h1 {
+    padding: 20px 20px 10px;
+  }
+}
+#introScreen .text-container h2 {
+  font-size: 5rem;
+  color: #545454;
+  font-family: josefin-sans, sans-serif;
+  font-weight: normal;
+}
+#introScreen .btn-container {
+  align-self: center;
+  grid-column: 1 /4;
+  grid-row: 4 / 5;
+  text-align: center;
+}
+#gameScreen {
+  background-color: #e5e5e5;
+}
+#gameScreen #scenarioWindow {
+  display: grid;
+  background: url('assets/game-screen-bg.svg') no-repeat 25% bottom;
+  grid-template-columns: repeat(12, 1fr);
+  overflow: hidden;
+}
+#gameScreen #scenarioWindow .nurse-character-container {
+  align-items: flex-end;
+  display: flex;
+  grid-column: 1 / 5;
+  grid-row: 1;
+}
+#gameScreen #scenarioWindow .nurse-character-container img {
+  width: 100%;
+}
+#gameScreen #scenarioWindow .patient-character-container {
+  align-self: end;
+  grid-column: 6 / -1;
+  grid-row: 1;
+}
+#gameScreen #scenarioWindow .patient-character-container img {
+  display: block;
+}
+#gameScreen #scenarioWindow .patient-character-container.ballerina,
+#gameScreen #scenarioWindow .patient-character-container.clown,
+#gameScreen #scenarioWindow .patient-character-container.cowboy,
+#gameScreen #scenarioWindow .patient-character-container.elf,
+#gameScreen #scenarioWindow .patient-character-container.heels,
+#gameScreen #scenarioWindow .patient-character-container.hockey-player,
+#gameScreen #scenarioWindow .patient-character-container.hulk,
+#gameScreen #scenarioWindow .patient-character-container.mom,
+#gameScreen #scenarioWindow .patient-character-container.red-boots,
+#gameScreen #scenarioWindow .patient-character-container.space-man {
+  overflow: hidden;
+}
+#gameScreen #scenarioWindow .patient-character-container.ballerina img,
+#gameScreen #scenarioWindow .patient-character-container.clown img,
+#gameScreen #scenarioWindow .patient-character-container.cowboy img,
+#gameScreen #scenarioWindow .patient-character-container.elf img,
+#gameScreen #scenarioWindow .patient-character-container.heels img,
+#gameScreen #scenarioWindow .patient-character-container.hockey-player img,
+#gameScreen #scenarioWindow .patient-character-container.hulk img,
+#gameScreen #scenarioWindow .patient-character-container.mom img,
+#gameScreen #scenarioWindow .patient-character-container.red-boots img,
+#gameScreen #scenarioWindow .patient-character-container.space-man img {
+  transition-timing-function: cubic-bezier(0.18, 0.89, 0.33, 1.07);
+  transition-duration: 1s;
+  transition-property: transform;
+  transform: translateX(100%);
+}
+#gameScreen #scenarioWindow .blood-bag-drop-zone-container {
+  display: grid;
+  grid-column: 10 / -1;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(20, minmax(0, 10%));
+  grid-row: 1 / -1;
+  transform: translate(0, 0);
+}
+#gameScreen #scenarioWindow .blood-bag-drop-zone-container.unloaded img.full,
+#gameScreen #scenarioWindow .blood-bag-drop-zone-container.unloaded label,
+#gameScreen #scenarioWindow .blood-bag-drop-zone-container.unloaded p.counter {
+  display: none;
+}
+#gameScreen #scenarioWindow .blood-bag-drop-zone-container.loaded img.empty {
+  display: none;
+}
+#gameScreen #scenarioWindow .blood-bag-drop-zone-container img {
+  align-self: flex-end;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  pointer-events: none;
+}
+#gameScreen #scenarioWindow .blood-bag-drop-zone-container label,
+#gameScreen #scenarioWindow .blood-bag-drop-zone-container p.counter {
+  grid-column: 1 / 2;
+  pointer-events: none;
+  color: #545454;
+  font-family: josefin-sans, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+#gameScreen #scenarioWindow .blood-bag-drop-zone-container label {
+  align-self: center;
+  font-size: 3rem;
+  grid-row: 6 / 9;
+  transform: translateY(5px);
+}
+#gameScreen #scenarioWindow .blood-bag-drop-zone-container p.counter {
+  color: #fff;
+  font-size: 1.6rem;
+  grid-row: 9 / 11;
+  transform: translateY(2px);
+}
+#gameScreen #scenarioWindow .blood-bag-drop-zone-container p.counter span {
+  margin-left: 2px;
+}
+#gameScreen #scenarioWindow .nurse-dialog-container {
+  grid-column: 4 / 10;
+  grid-row: 1;
+}
+@media screen and (max-width: 649px) {
+  #gameScreen #scenarioWindow .nurse-dialog-container {
+    grid-column: 3 / 11;
+  }
+}
+#gameScreen #scenarioWindow .nurse-dialog-container .dialog-box {
+  background-color: #fff;
+  border: 2px #545454 solid;
+  border-radius: 12px;
+  padding: 20px;
+  transform: translateY(36px);
+}
+#gameScreen #scenarioWindow .nurse-dialog-container .dialog-box p {
+  font-size: 1.4rem;
+  line-height: 1.3;
+}
+#gameScreen hr {
+  border-top: 3px #545454 solid;
+  margin: 0;
+  border-bottom: 6px #b7b7b7 solid;
+}
+#gameScreen #gameControlsWindow {
+  background-color: #545454;
+  display: grid;
+  grid-gap: 25px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: 'counter blood blood game-helpers';
+  padding: 15px 0;
+}
+@media screen and (max-width: 600px) {
+  #gameScreen #gameControlsWindow {
+    grid-gap: 15px;
+    grid-template-areas: 'blood blood blood blood' 'counter counter game-helpers game-helpers';
+    padding: 15px;
+  }
+}
+#gameScreen #gameControlsWindow .game-counters-container {
+  align-items: center;
+  border-right: 2px #b7b7b7 solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  grid-area: counter;
+}
+@media screen and (max-width: 600px) {
+  #gameScreen #gameControlsWindow .game-counters-container {
+    border-right: none;
+    flex-direction: row;
+  }
+}
+#gameScreen #gameControlsWindow .game-counters-container .counter-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+#gameScreen #gameControlsWindow .game-counters-container .counter-container p {
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#gameScreen #gameControlsWindow .game-counters-container .counter-icon,
+#gameScreen #gameControlsWindow .game-counters-container .counter-number {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+#gameScreen #gameControlsWindow .game-counters-container .counter-icon {
+  width: 60px;
+}
+#gameScreen #gameControlsWindow .game-counters-container .counter-icon img {
+  height: 24px;
+  width: 24px;
+}
+#gameScreen #gameControlsWindow .game-counters-container .counter-icon p {
+  font-size: 1rem;
+}
+#gameScreen #gameControlsWindow .game-counters-container .counter-number {
+  width: 48px;
+}
+#gameScreen #gameControlsWindow .game-counters-container .counter-number p {
+  font-size: 2.8rem;
+}
+#gameScreen #gameControlsWindow .blood-bag-container {
+  display: grid;
+  grid-area: blood;
+  grid-gap: 15px;
+  grid-template-columns: repeat(4, 1fr);
+  transition: opacity 0.25s ease-in-out;
+}
+#gameScreen #gameControlsWindow .blood-bag-container .blood-bag {
+  cursor: pointer;
+  display: grid;
+  grid-template-rows: repeat(20, minmax(0, 10%));
+  justify-items: center;
+  padding: 0;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+  transition-property: transform;
+}
+#gameScreen #gameControlsWindow .blood-bag-container .blood-bag img,
+#gameScreen #gameControlsWindow .blood-bag-container .blood-bag label,
+#gameScreen #gameControlsWindow .blood-bag-container .blood-bag p {
+  pointer-events: none;
+}
+#gameScreen #gameControlsWindow .blood-bag-container .blood-bag:hover {
+  transform: scale(1.05);
+}
+#gameScreen #gameControlsWindow .blood-bag-container img {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  width: 100%;
+}
+#gameScreen #gameControlsWindow .blood-bag-container label,
+#gameScreen #gameControlsWindow .blood-bag-container p.counter {
+  align-items: center;
+  display: flex;
+  grid-column: 1 / -1;
+  color: #545454;
+  font-family: josefin-sans, sans-serif;
+  font-weight: bold;
+}
+#gameScreen #gameControlsWindow .blood-bag-container label {
+  font-size: 2.6rem;
+  grid-row: 4 / 10;
+}
+#gameScreen #gameControlsWindow .blood-bag-container p.counter {
+  color: #fff;
+  font-size: 1.6rem;
+  grid-row: 10 / 14;
+}
+#gameScreen #gameControlsWindow .blood-bag-container p.counter span {
+  margin-left: 2px;
+}
+#gameScreen #gameControlsWindow .game-helpers-container {
+  align-items: center;
+  border-left: 2px #b7b7b7 solid;
+  display: flex;
+  flex-direction: column;
+  grid-area: game-helpers;
+  justify-content: center;
+}
+@media screen and (max-width: 600px) {
+  #gameScreen #gameControlsWindow .game-helpers-container {
+    border-left: none;
+    flex-direction: row;
+  }
+}
+#gameScreen #gameControlsWindow .game-helpers-container button {
+  margin: 4px;
+  padding: 0;
+  width: 100%;
+  max-width: 48px;
+}
